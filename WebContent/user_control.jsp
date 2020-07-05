@@ -5,6 +5,7 @@
 <jsp:setProperty name="member" property="*" />
 <jsp:useBean id="mdao" class="mysns.member.MemberDAO" />
 
+
 <%
 	// 컨트롤러 요청 action 코드값
 	String action = request.getParameter("action");

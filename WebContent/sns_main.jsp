@@ -110,7 +110,7 @@
 				<ul>
 					<li><a href="https://github.com/hanjeongwon97">한정원20160781</a></li>
 					<li><a href="http://www.duksung.ac.kr/main.do">덕성여자대학교</a></li>
-					<li><a href="https://www.duksung.ac.kr/computer/main.do">덕성 컴퓨터공학과</a></li>
+					<li><a href="https://www.duksung.ac.kr/computer/main.do">덕성컴퓨터공학과</a></li>
 				</ul>
 
 			</aside>
@@ -146,13 +146,13 @@
 								<ul>
 									<li><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B8785158105">Book Support</a></li>
 									<li><a href="https://www.hanbit.co.kr/index.html">Publication</a></li>
-									<li><a href="#">Investor Relations</a></li>
+									<li><a href="https://www.hanbit.co.kr/index.html">Investor Relations</a></li>
 									</ul>
 					</aside><!-- end of #third footer segment -->
 					
 					<aside class="footer-segment">
 							<h4>한정원</h4>
-								<p>&copy; hanjeongwon <a href="https://github.com/hanjeongwon97">한정원</a> </p>
+								<p>&copy; hanjeongwon <a href="https://github.com/hanjeongwon97/Simple-mysns">한정원</a> </p>
 					</aside><!-- end of #fourth footer segment -->
 
 				</section>

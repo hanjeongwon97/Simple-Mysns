@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 	pageEncoding="UTF-8" import="mysns.sns.*,mysns.member.*,java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<% request.setCharacterEncoding("utf-8"); %>
+<!-- 한정원 :  -->
 
 <!-- 메시지 처리 빈즈 -->
 <jsp:useBean id="msg" class="mysns.sns.Message" />
@@ -10,6 +12,7 @@
 <!-- 프로퍼티 set -->
 <jsp:setProperty name="msg" property="*" />
 <jsp:setProperty name="reply" property="*" />
+
 
 <%
 	// 기본 파라미터 정리
@@ -24,6 +27,12 @@
 	
 	// 홈 URL
 	String home;
+	
+	// 한정원 : 댓글 수정에 사용될 변수 추가
+	String rmsg = request.getParameter("rmsg"); 
+	
+	//한정원 : 메시지 수정에 사용될 변수 추가
+	String inmsg = request.getParameter("upmsg");
 	
 	// 메시지 페이지 카운트
 	int mcnt;
@@ -63,6 +72,16 @@
 		else
 			throw new Exception("메시지 등록 오류!!");;
 	} 
+	//한정원 : 메시지 수정 추가 
+	else if(action.equals("updatemsg")){
+		if (msgdao.updateMsg(msg,inmsg))
+			pageContext.forward(home);
+		else
+			throw new Exception("메시지 수정 오류!!");
+		
+		response.sendRedirect(home);
+	}
+	
 	// 댓글 삭제
 	else if (action.equals("delreply")) {
 		if(msgdao.delReply(reply.getRid())) {
@@ -71,9 +90,14 @@
 		else
 			throw new Exception("메시지 등록 오류!!");;
 	}
+	
 	//한정원 : 댓글 수정 추가
-	else if (action.equals("updatereply")){
-		System.out.println("댓글수정댓글수정댓글수정댓글수정댓글수정댓글수정!!!!!!!!!!!!!!!!!");
+	else if (action.equals("rupdate")){
+		if(msgdao.updateReply(reply,rmsg)){
+			response.sendRedirect(home);
+		}
+		else 
+			throw new Exception("댓글수정 등록 오류!!");;
 	}
 	
 	

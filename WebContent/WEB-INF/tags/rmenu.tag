@@ -5,20 +5,15 @@
 <%@ attribute name="ruid" %>
 <%@ attribute name="curmsg" %>
 
-<script>
 
-	function newuser() {
-		window
-				.open(
-						"new_user.jsp",
-						"newuser",
-						"titlebar=no,location=no,scrollbars=no,resizeable=no,menubar=no,toolbar=no,width=300,height=240");
-	}
-</script>
-
-<!-- 한정원 : 수정 추가 -->
+<!-- 한정원 : 댓글 수정 추가 -->
 <c:if test="${uid == ruid}">
-[<a href="sns_control.jsp?action=delreply&rid=${rid}&curmsg=${curmsg}&cnt=${cnt}&suid=${suid}">삭제</a>] 
-[<a href="sns_control.jsp?action=updatereply&rid=${rid}&curmsg=${curmsg}&cnt=${cnt}&suid=${suid}">수정</a>] 
-<li><a href="javascript:newuser()">New User</a></li>
+<button id = "hancss" type="button" onclick="location.href='sns_control.jsp?action=delreply&rid=${rid}&curmsg=${curmsg}&cnt=${cnt}&suid=${suid}'">삭제</button>
+<form method="post" action = "sns_control.jsp?action=rupdate&rid=${rid}&curmsg=${curmsg}&cnt=${cnt}&suid=${suid}" >
+<table>
+	<tr><td><input type="text" name="rmsg" size="30" required>
+	<button id="hancss" type="submit">댓글수정</button>
+	</td></tr>
+</table>
+</form> 
 </c:if>

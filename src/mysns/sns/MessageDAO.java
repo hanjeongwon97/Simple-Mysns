@@ -156,6 +156,31 @@ public class MessageDAO {
 		}
 		return true;	
 	}
+	/*한정원 : 메시지 수정 기능 메소드 추가*/
+	public boolean updateMsg(Message msg, String inmsg) {
+		conn = DBManager.getConnection();
+		String sql = "update s_message set msg = ? where mid = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,inmsg);
+			pstmt.setInt(2, msg.getMid());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println(e.getErrorCode());
+			return false;
+		}
+		finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return true;
+	}
+	
 		
 	/**
 	 * 게시글에 대한 답글 등록, 원 게시물에 대한 mid 필요
@@ -215,19 +240,15 @@ public class MessageDAO {
 		}
 		return true;
 	}
-	//한정원 : 답글 수정
-	/*
-	 * @param rid
-	 * @return
-	 * 
-	 * */
-/*
-	public boolean updateReply(int rid) {
+	
+	//한정원 : 답글 수정 메소드를 추가함 
+	public boolean updateReply(Reply reply, String rmsg) {
 		conn = DBManager.getConnection();
 		String sql = "update s_reply set rmsg = ? where rid = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, rid);;
+			pstmt.setString(1, rmsg);
+			pstmt.setInt(2, reply.getRid());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -244,7 +265,7 @@ public class MessageDAO {
 		}
 		return true;
 	}
-*/
+
 	/**
 	 * 좋아요 추가
 	 * @param mid

@@ -461,6 +461,33 @@ color:#191919;
     top:100px;
 }
 
+/*한정원 : 추가
+버튼에 적용*/
+input[type=submit]{
+	background-color:#0080c0;
+    border-radius:5px;   
+    padding:3px 15px;
+    color:#ffffff;
+    font-weight:bold;
+    text-align:center;
+    text-shadow:0 -1px 0 #396715;
+    position:ralative;
+    top:100px;
+}
+
+/*한정원 : 추가
+버튼에 적용*/
+#hancss{
+	background-color:#0080c0;
+    border-radius:5px;   
+    color:#ffffff;
+    font-weight:bold;
+    text-align:center;
+    text-shadow:0 -1px 0 #396715;
+    position:ralative;
+    top:100px;
+}
+
 /* hover: 마우스가 올려진 상태  active:마우스를 누르고 잇는 상태 
 link : 하이퍼링크  visited :이미 한번 방문한 하이퍼링크  */
 .submit:hover{
