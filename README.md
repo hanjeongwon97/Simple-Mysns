@@ -1,5 +1,5 @@
 ## Simple-mysns
-  - 2020 term1 Internet Programming final Assignment1
+  - 2020 term1 Internet Programming final Assignment1(personal project)
   - https://m.hanbit.co.kr/store/books/book_view.html?p_code=B8785158105
   - 위 교재의 mysns 코드(프로젝트)에 새로운 기능 두가지 수정/추가하기
 ### 수정/추가한 것
